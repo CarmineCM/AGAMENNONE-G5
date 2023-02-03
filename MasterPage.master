@@ -16,25 +16,67 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="col-lg-7">
-            <img src="assets/images/logo.png" />
-       </div>
-           
-        <div class="sec-center">
-                <input class="dropdown" type="checkbox" id="dropdown" name="dropdown" />
-                <label class="for-dropdown" for="dropdown">Dropdown Menu <i class="uil uil-arrow-down"></i></label>
-                <div class="section-dropdown">
-                    <a href="#">Dropdown Link <i class="uil uil-arrow-right"></i></a>
-                    <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub" />
-                    <label class="for-dropdown-sub" for="dropdown-sub">Dropdown Sub <i class="uil uil-plus"></i></label>
-                    <div class="section-dropdown-sub">
-                        <a href="#">Dropdown Link <i class="uil uil-arrow-right"></i></a>
-                        <a href="#">Dropdown Link <i class="uil uil-arrow-right"></i></a>
-                    </div>
-                    <a href="#">Dropdown Link <i class="uil uil-arrow-right"></i></a>
-                    <a href="#">Dropdown Link <i class="uil uil-arrow-right"></i></a>
-                </div>
+
+        <img src="assets/images/logo.png" />
+
+        <div class="menu">
+            <div class="body">
+                <ul>
+                    <li><a href="#"></a>Home</li>
+
+                    <li><a href="#"></a>Lavoro
+                        <ul>
+                            <li><a href="#"></a>Inserisci</li>
+                            <li><a href="#"></a>Modifica</li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"></a>Commesse
+                        <ul>
+                            <li><a href="#"></a>Visualizza</li>
+                            <li><a href="#"></a>Inserisci</li>
+                            <li><a href="#"></a>Modifica</li>
+                            <li><a href="#"></a>Gestisci Referenti</li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"></a>Clienti
+                        <ul>
+                            <li><a href="#"></a>Visualizza</li>
+                            <li><a href="#"></a>Inserisci</li>
+                            <li><a href="#"></a>Modifica</li>
+                        </ul>
+                    </li>
+
+                 <li><a href="#"></a>Fatture
+                        <ul>
+                            <li><a href="#"></a>Visualizza</li>
+                            <li><a href="#"></a>Inserisci</li>
+                            <li><a href="#"></a>Modifica</li>
+                        </ul>
+                    </li>
+
+                      <li><a href="#"></a>Dipendenti
+                        <ul>
+                            <li><a href="#"></a>Visualizza</li>
+                            <li><a href="#"></a>Inserisci</li>
+                            <li><a href="#"></a>Modifica</li>
+                            <li><a href="#"></a>Abilita/Disabilita</li>
+                            <li><a href="#"></a>Gestione Aziende</li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"></a>Report
+                          <ul>
+                            <li><a href="#"></a>Log Accessi</li>
+                            <li><a href="#"></a>Log Eventi</li>
+                        </ul>
+                    </li>
+                  
+                    <li><a href="#"></a>Log out</li>
+                </ul>
             </div>
+        </div>
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
