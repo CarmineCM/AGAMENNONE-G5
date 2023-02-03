@@ -22,13 +22,6 @@ body {
     padding-bottom: 300px;
 }
 
-/*.sec-center {
-    position: relative;
-    max-width: 100%;
-    text-align: center;
-    z-index: 200;
-}*/
-
 [type="checkbox"]:checked,
 [type="checkbox"]:not(:checked) {
     position: absolute;
