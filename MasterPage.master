@@ -22,58 +22,58 @@
         <div class="menu">
             <div class="body">
                 <ul>
-                    <li><a href="#"></a>Home</li>
+                    <li><a href="Default.aspx">Home</a></li>
 
-                    <li><a href="#"></a>Lavoro
+                    <li><a href="#">Lavoro</a>
                         <ul>
-                            <li><a href="#"></a>Inserisci</li>
-                            <li><a href="#"></a>Modifica</li>
+                            <li><a href="#">Inserisci</a></li>
+                            <li><a href="#">Modifica</a></li>
                         </ul>
                     </li>
-
-                    <li><a href="#"></a>Commesse
+                    
+                    <li><a href="#">Commesse</a>
                         <ul>
-                            <li><a href="#"></a>Visualizza</li>
-                            <li><a href="#"></a>Inserisci</li>
-                            <li><a href="#"></a>Modifica</li>
+                            <li><a href="#">Visualizza</a></li>
+                            <li><a href="#">Inserisci</a></li>
+                            <li><a href="#">Modifica</a></li>
                             <li><a href="#"></a>Gestisci Referenti</li>
                         </ul>
                     </li>
 
-                    <li><a href="#"></a>Clienti
+                    <li><a href="#">Clienti</a>
                         <ul>
-                            <li><a href="#"></a>Visualizza</li>
-                            <li><a href="#"></a>Inserisci</li>
-                            <li><a href="#"></a>Modifica</li>
+                            <li><a href="#">Visualizza</a></li>
+                            <li><a href="#">Inserisci</a></li>
+                            <li><a href="#">Modifica</a></li>
                         </ul>
                     </li>
 
-                 <li><a href="#"></a>Fatture
+                 <li><a href="#">Fatture</a>
                         <ul>
-                            <li><a href="#"></a>Visualizza</li>
-                            <li><a href="#"></a>Inserisci</li>
-                            <li><a href="#"></a>Modifica</li>
+                            <li><a href="#">Visualizza</a></li>
+                            <li><a href="#">Inserisci</a></li>
+                            <li><a href="#">Modifica</a></li>
                         </ul>
                     </li>
 
-                      <li><a href="#"></a>Dipendenti
+                      <li><a href="#">Dipendenti</a>
                         <ul>
-                            <li><a href="#"></a>Visualizza</li>
-                            <li><a href="#"></a>Inserisci</li>
-                            <li><a href="#"></a>Modifica</li>
-                            <li><a href="#"></a>Abilita/Disabilita</li>
-                            <li><a href="#"></a>Gestione Aziende</li>
+                            <li><a href="#">Visualizza</a></li>
+                            <li><a href="#">Inserisci</a></li>
+                            <li><a href="#">Modifica</a></li>
+                            <li><a href="#">Abilita/Disabilita</a></li>
+                            <li><a href="#">Gestione Aziende</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="#"></a>Report
+                    <li><a href="#">Report</a>
                           <ul>
-                            <li><a href="#"></a>Log Accessi</li>
-                            <li><a href="#"></a>Log Eventi</li>
+                            <li><a href="#">Log Accessi</a></li>
+                            <li><a href="#">Log Eventi</a></li>
                         </ul>
                     </li>
                   
-                    <li><a href="#"></a>Log out</li>
+                    <li><a href="#">Log out</a></li>
                 </ul>
             </div>
         </div>
