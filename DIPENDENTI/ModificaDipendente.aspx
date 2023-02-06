@@ -1,7 +1,164 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ModificaDipendente.aspx.cs" Inherits="modificaDipendente" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="container mt-5">
+        <table class="mt-5 d-flex justify-content-center align-items-center">
+            <tr>
+                <td class="justify-content-center align-items-center text-align-center">
+                    <p></p>
+                    <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                    <asp:Button ID="Button1" runat="server" Text="ModifcaDipendete" />
+
+                </td>
+        </table>
+        <div class="container py-5 mt-5">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-lg-8 col-xl-6">
+
+                    <div class="card-header  text-center">
+                        <label>Scegli l'azienda per il nuovo dipendete</label>
+                        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlEMail" runat="server">Inserisci l'EMail</asp:Literal>
+                                    <asp:TextBox ID="txtEMail" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlPwd" runat="server">Inserisci la password</asp:Literal>
+                                    <asp:TextBox ID="txtPwd" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlA_N" runat="server">Abilita/Disabilita dipendete (A/N)</asp:Literal>
+                                    <asp:TextBox ID="txtA_N" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlRuolo" runat="server">Inserisci il ruolo del dipendete (U,O,A,E)</asp:Literal>
+                                    <asp:TextBox ID="txtRuolo" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlCognome" runat="server">Inserisci il Cognome</asp:Literal>
+                                    <asp:TextBox ID="txtCognome" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlNome" runat="server">Inserisci il Nome</asp:Literal>
+                                    <asp:TextBox ID="txtNome" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlIndirizzo" runat="server">Inserisci l'Indirizzo</asp:Literal>
+                                    <asp:TextBox ID="txtIndirizzo" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlCitta" runat="server">Inserisci la Città</asp:Literal>
+                                    <asp:TextBox ID="txtCitta" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlCap" runat="server">Inserisci il CAP</asp:Literal>
+                                    <asp:TextBox ID="txtCap" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlPtovincia" runat="server">Inserisci la Provincia</asp:Literal>
+                                    <asp:TextBox ID="txtProvincia" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlTelefono" runat="server">Inserisci il Telefono</asp:Literal>
+                                    <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlCostoOrario" runat="server">Inserisci il Costo Orario</asp:Literal>
+                                    <asp:TextBox ID="txtCostoOrario" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlDataInizio" runat="server">Inserisci la data di inizio rapporto</asp:Literal>
+                                    <asp:TextBox ID="txtDataInizio" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <asp:Literal ID="ltlDataFine" runat="server">Inserisci la data di fine rapporto</asp:Literal>
+                                    <asp:TextBox ID="txtDataFine" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="card-footer text-center">
+                            <asp:Button ID="Button2" runat="server" Text="Inserisci azienda" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
 
