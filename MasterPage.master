@@ -35,60 +35,59 @@
                     <div class="col-12">
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
-                            <a href="index.html" class="logo">AGAMENNONE
+                            <a href="../Default.aspx" class="logo">AGAMENNONE
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                                <li class="scroll-to-section"><a href="../Default.aspx" class="active">Home</a></li>
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">LAVORO</a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">Inserisci</a></li>
-                                        <li><a href="#">Modifica</a></li>
+                                        <li><a href="../LAVORO/InsLavoro.aspx">Inserisci</a></li>
+                                        <li><a href="../LAVORO/ModificaLavoro.aspx">Modifica</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">COMMESSE</a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">Visualizza</a></li>
-                                        <li><a href="#l">Inserisci</a></li>
-                                        <li><a href="#">Modifica</a></li>
-                                        <li><a href="#">Gestisci Referenti</a></li>
+                                        <li><a href="../COMMESSE/VisualizzaCommesse.aspx">Visualizza</a></li>
+                                        <li><a href="../COMMESSE/InsCommesse.aspx">Inserisci</a></li>
+                                        <li><a href="../COMMESSE/ModifcaCommesse.aspx">Modifica</a></li>
+                                        <li><a href="../COMMESSE/GestisciReferenti.aspx">Gestisci Referenti</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">CLIENTI</a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">Visualizza</a></li>
-                                        <li><a href="#">Inserisci</a></li>
-                                        <li><a href="#">Modifica</a></li>
-                                        <li><a href="#">Gestisci Referenti</a></li>
+                                        <li><a href="../CLIENTI/VisualizzaClienti.aspx">Visualizza</a></li>
+                                        <li><a href="../CLIENTI/InsClienti.aspx">Inserisci</a></li>
+                                        <li><a href="../CLIENTI/ModificaClienti.aspx">Modifica</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">FATTURE</a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">Visualizza</a></li>
-                                        <li><a href="#">Inserisci</a></li>
-                                        <li><a href="#">Modifica</a></li>
+                                        <li><a href="../FATTURE/VisualizzaFatture.aspx">Visualizza</a></li>
+                                        <li><a href="../FATTURE/InsFatture.aspx">Inserisci</a></li>
+                                        <li><a href="../FATTURE/ModificaFatture.aspx">Modifica</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">DIPENDENTI</a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">Visualizza</a></li>
-                                        <li><a href="#">Inserisci</a></li>
-                                        <li><a href="#">Modifica</a></li>
-                                        <li><a href="#">Abilita/Disabilita</a></li>
-                                        <li><a href="#">Gestisci Aziende</a></li>
+                                        <li><a href="../DIPENDENTI/VisualizzaDipendente.aspx">Visualizza</a></li>
+                                        <li><a href="../DIPENDENTI/InsDipendente.aspx">Inserisci</a></li>
+                                        <li><a href="../DIPENDENTI/ModificaDipendente.aspx">Modifica</a></li>
+                                        <li><a href="../DIPENDENTI/ABdipendente.aspx">Abilita/Disabilita</a></li>
+                                        <li><a href="../DIPENDENTI/GestioneAziende.aspx">Gestisci Aziende</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">REPORT</a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">Log Accessi</a></li>
-                                        <li><a href="#">Log Eventi  </a></li>
+                                        <li><a href="../LOG/VisualizzaLog_A.aspx">Log Accessi</a></li>
+                                        <li><a href="../LOG/VisualizzaLog_E.aspx">Log Eventi</a></li>
                                     </ul>
                                 </li>
                             </ul>
