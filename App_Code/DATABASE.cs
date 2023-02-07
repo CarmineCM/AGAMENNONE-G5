@@ -4,19 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Configuration;
 
 public class DATABASE
 {
-    public SqlConnection conn = new SqlConnection();
-    public SqlCommand cmd = new SqlCommand();
-    public SqlDataAdapter DA = new SqlDataAdapter();
-    public DataTable DT = new DataTable();
+    public  SqlConnection conn = new SqlConnection();
+    public  SqlCommand cmd = new SqlCommand();
+    public  SqlDataAdapter DA = new SqlDataAdapter();
+    public  DataTable DT = new DataTable();
 
-    public DATABASE()
+    static void GetConnectionStrings()
     {
-        conn.ConnectionString = "Data Source=DESKTOP-JI1DSED\\SQLEXPRESS;Initial Catalog=AGAMENNONE;Integrated Security=True";
-        cmd.Connection = conn;
+        ConnectionStringSettingsCollection settings = ConfigurationManager.ConnectionStrings;
+    }
+
+    public  DATABASE()
+    {
+        GetConnectionStrings();
     }
 
     public void EseguiSPNonRead()

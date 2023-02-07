@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
+
+    <link href="assets/css/popup.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -41,50 +43,33 @@
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
                                 <li class="scroll-to-section"><a href="../Default.aspx" class="active">Home</a></li>
-                                <li class="has-sub">
-                                    <a href="javascript:void(0)">LAVORO</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="../LAVORO/InsLavoro.aspx">Inserisci</a></li>
-                                        <li><a href="../LAVORO/ModificaLavoro.aspx">Modifica</a></li>
-                                    </ul>
-                                </li>
+
+                                <li><a href="../LAVORO/GestisciLavoro.aspx">Gestisci Lavoro</a></li>
+
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">COMMESSE</a>
                                     <ul class="sub-menu">
-                                        <li><a href="../COMMESSE/VisualizzaCommesse.aspx">Visualizza</a></li>
-                                        <li><a href="../COMMESSE/InsCommesse.aspx">Inserisci</a></li>
-                                        <li><a href="../COMMESSE/ModifcaCommesse.aspx">Modifica</a></li>
-                                        <li><a href="../COMMESSE/GestisciReferenti.aspx">Gestisci Referenti</a></li>
+                                        <li><a href="../COMMESSE/GestisciCommesse.aspx">Gestisci Commesse</a></li>
+                                        <li><a href="../COMMESSE/REFERENTI/GestisciReferenti.aspx">Gestisci Referenti</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-sub">
-                                    <a href="javascript:void(0)">CLIENTI</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="../CLIENTI/VisualizzaClienti.aspx">Visualizza</a></li>
-                                        <li><a href="../CLIENTI/InsClienti.aspx">Inserisci</a></li>
-                                        <li><a href="../CLIENTI/ModificaClienti.aspx">Modifica</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub">
-                                    <a href="javascript:void(0)">FATTURE</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="../FATTURE/VisualizzaFatture.aspx">Visualizza</a></li>
-                                        <li><a href="../FATTURE/InsFatture.aspx">Inserisci</a></li>
-                                        <li><a href="../FATTURE/ModificaFatture.aspx">Modifica</a></li>
-                                    </ul>
-                                </li>
+
+                                <li><a href="../CLIENTI/GestisciClienti.aspx">Gestisci Clienti</a></li>
+
+                                <li><a href="../FATTURE/GestisciFatture.aspx">Gestisci Fatture</a></li>
+
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">DIPENDENTI</a>
                                     <ul class="sub-menu">
-                                        <li><a href="../DIPENDENTI/VisualizzaDipendente.aspx">Visualizza</a></li>
-                                        <li><a href="../DIPENDENTI/InsDipendente.aspx">Inserisci</a></li>
-                                        <li><a href="../DIPENDENTI/ModificaDipendente.aspx">Modifica</a></li>
-                                        <li><a href="../DIPENDENTI/ABdipendente.aspx">Abilita/Disabilita</a></li>
-                                        <li><a href="../DIPENDENTI/GestioneAziende.aspx">Gestisci Aziende</a></li>
+                                        <li><a href="../DIPENDENTI/GestisciDipendenti.aspx">Gestisci Dipendenti</a></li>
+                                        <li><a href="../DIPENDENTI/AZIENDE/GestioneAziende.aspx">Gestisci Aziende</a></li>
                                     </ul>
                                 </li>
+
+                                <li><a href="../REPORT/Report.aspx">Report</a></li>
+
                                 <li class="has-sub">
-                                    <a href="javascript:void(0)">REPORT</a>
+                                    <a href="javascript:void(0)">LOG</a>
                                     <ul class="sub-menu">
                                         <li><a href="../LOG/VisualizzaLog_A.aspx">Log Accessi</a></li>
                                         <li><a href="../LOG/VisualizzaLog_E.aspx">Log Eventi</a></li>
@@ -170,8 +155,10 @@
                 checkSection();
             });
         </script>
+
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
+
     </form>
 </body>
 </html>
