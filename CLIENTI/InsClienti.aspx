@@ -1,9 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="InsClienti.aspx.cs" Inherits="InsClienti" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InsClienti.aspx.cs" Inherits="InsClienti" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <section class="h-100 h-custom">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Inserisci Cliente</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <section class="h-100 h-custom">
         <br />
         <div class="container py-5 mt-5">
             <div class="row d-flex justify-content-center align-items-center">
@@ -135,5 +141,6 @@
             </div>
         </div>
     </section>
-</asp:Content>
-
+    </form>
+</body>
+</html>

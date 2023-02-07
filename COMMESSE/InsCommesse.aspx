@@ -1,9 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="InsCommesse.aspx.cs" Inherits="InsCommesse" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InsCommesse.aspx.cs" Inherits="InsCommesse" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Inserisci Commessa</title>
     <link href="../assets/css/commesse.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+           
 
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
@@ -88,5 +96,6 @@
         </div>
     </div>
 
-</asp:Content>
-
+    </form>
+</body>
+</html>

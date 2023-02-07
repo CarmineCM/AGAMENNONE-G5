@@ -1,0 +1,16 @@
+﻿.Background {
+    background-color: #45454573;
+    filter: alpha(opacity=30);
+    opacity: 10.8;
+}
+
+.Popup {
+    background-color: #ffffff;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 800px;
+    height: 650px;
+}

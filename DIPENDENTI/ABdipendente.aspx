@@ -18,7 +18,7 @@
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <asp:Button ID="Button1" runat="server" Text="Abilita Dipendente" />
+                                <asp:Button ID="btnAbilita" runat="server" Text="Abilita Dipendente" />
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <asp:Button ID="Button2" runat="server" Text="Disabilita Dipendente" />
+                                <asp:Button ID="btnDisabilita" runat="server" Text="Disabilita Dipendente" />
                             </div>
                         </div>
                         </div>
