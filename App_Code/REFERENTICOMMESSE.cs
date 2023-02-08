@@ -8,27 +8,21 @@ using System.Drawing;
 
 public class REFERENTICOMMESSE
 {
-    public int chiave;
-    public int chiaveREFERENTE;
-    public int chiaveCOMMESSA;
-    public REFERENTICOMMESSE()
+    public static int chiave;
+    public static int chiaveREFERENTE;
+    public static int chiaveCOMMESSA;
+
+    public static void spREFERENTICOMMESSE_DeleteAll()
     {
-       
+        DATABASE.cmd.CommandText = "spREFERENTICOMMESSE_DeleteAll";
+        DATABASE.EseguiSPNonRead();
     }
 
-    public void spREFERENTICOMMESSE_DeleteAll()
+    public static void spREFERENTICOMMESSE_Insert()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spREFERENTICOMMESSE_DeleteAll";
-        D.EseguiSPNonRead();
-    }
-
-    public void spREFERENTICOMMESSE_Insert()
-    {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spREFERENTICOMMESSE_Insert";
-        D.cmd.Parameters.AddWithValue("chiaveREFERENTE", chiaveREFERENTE);
-        D.cmd.Parameters.AddWithValue("chiaveCOMMESSA", chiaveCOMMESSA);
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spREFERENTICOMMESSE_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveREFERENTE", chiaveREFERENTE);
+        DATABASE.cmd.Parameters.AddWithValue("chiaveCOMMESSA", chiaveCOMMESSA);
+        DATABASE.EseguiSPNonRead();
     }
 }
