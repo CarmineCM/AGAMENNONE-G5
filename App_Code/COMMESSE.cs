@@ -10,120 +10,108 @@ using System.Diagnostics;
 
 public class COMMESSE
 {
-    public int chiave;
-    public int chiaveCLIENTE;
-    public int chiaveRESPONSABILE;
-    public string CORPOORA;
-    public string DATAAPERTURA;
-    public string DATACHIUSURA;
-    public string DATACONSEGNA;
-    public string DESCRIZIONE;
-    public string IMPORTOCORPO;
-    public string IMPORTOORARIO;
-    public string ANTICIPO;
-    public string PERNOTTAMENTO;
-    public string PASTO;
-    public string KM;
-    public string PEDAGGI;
-    public string MEZZI;
-    public COMMESSE()
-    {
+    public static int chiave;
+    public static int chiaveCLIENTE;
+    public static int chiaveRESPONSABILE;
+    public static string CORPOORA;
+    public static string DATAAPERTURA;
+    public static string DATACHIUSURA;
+    public static string DATACONSEGNA;
+    public static string DESCRIZIONE;
+    public static string IMPORTOCORPO;
+    public static string IMPORTOORARIO;
+    public static string ANTICIPO;
+    public static string PERNOTTAMENTO;
+    public static string PASTO;
+    public static string KM;
+    public static string PEDAGGI;
+    public static string MEZZI;
 
+    public static void spCOMMESSE_Insert()
+    {
+        DATABASE.cmd.CommandText = "spCOMMESSE_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
+        DATABASE.cmd.Parameters.AddWithValue("chiaveRESPONSABILE", chiaveRESPONSABILE);
+        DATABASE.cmd.Parameters.AddWithValue("CORPOORA", CORPOORA);
+        DATABASE.cmd.Parameters.AddWithValue("DATAAPERTURA", DATAAPERTURA);
+        DATABASE.cmd.Parameters.AddWithValue("DATACHIUSURA", DATACHIUSURA);
+        DATABASE.cmd.Parameters.AddWithValue("DATACONSEGNA", DATACONSEGNA);
+        DATABASE.cmd.Parameters.AddWithValue("DESCRIZIONE", DESCRIZIONE);
+        DATABASE.cmd.Parameters.AddWithValue("IMPORTOCORPO", IMPORTOCORPO);
+        DATABASE.cmd.Parameters.AddWithValue("IMPORTOORARIO", IMPORTOORARIO);
+        DATABASE.cmd.Parameters.AddWithValue("ANTICIPO", ANTICIPO);
+        DATABASE.cmd.Parameters.AddWithValue("PERNOTTAMENTO", PERNOTTAMENTO);
+        DATABASE.cmd.Parameters.AddWithValue("PASTO", PASTO);
+        DATABASE.cmd.Parameters.AddWithValue("KM", KM);
+        DATABASE.cmd.Parameters.AddWithValue("PEDAGGI", PEDAGGI);
+        DATABASE.cmd.Parameters.AddWithValue("MEZZI", MEZZI);
+        DATABASE.EseguiSPNonRead();
     }
 
-    public void spCOMMESSE_Insert()
+    public static DataTable spCOMMESSE_SelectAll()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spCOMMESSE_Insert";
-        D.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
-        D.cmd.Parameters.AddWithValue("chiaveRESPONSABILE", chiaveRESPONSABILE);
-        D.cmd.Parameters.AddWithValue("CORPOORA", CORPOORA);
-        D.cmd.Parameters.AddWithValue("DATAAPERTURA", DATAAPERTURA);
-        D.cmd.Parameters.AddWithValue("DATACHIUSURA", DATACHIUSURA);
-        D.cmd.Parameters.AddWithValue("DATACONSEGNA", DATACONSEGNA);
-        D.cmd.Parameters.AddWithValue("DESCRIZIONE", DESCRIZIONE);
-        D.cmd.Parameters.AddWithValue("IMPORTOCORPO", IMPORTOCORPO);
-        D.cmd.Parameters.AddWithValue("IMPORTOORARIO", IMPORTOORARIO);
-        D.cmd.Parameters.AddWithValue("ANTICIPO", ANTICIPO);
-        D.cmd.Parameters.AddWithValue("PERNOTTAMENTO", PERNOTTAMENTO);
-        D.cmd.Parameters.AddWithValue("PASTO", PASTO);
-        D.cmd.Parameters.AddWithValue("KM", KM);
-        D.cmd.Parameters.AddWithValue("PEDAGGI", PEDAGGI);
-        D.cmd.Parameters.AddWithValue("MEZZI", MEZZI);
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spCOMMESSE_SelectAll";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spCOMMESSE_SelectAll()
+    public static DataTable spCOMMESSE_SelectAll_DDL_Cliente()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spCOMMESSE_SelectAll";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spCOMMESSE_SelectAll_DDL_Cliente";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spCOMMESSE_SelectAll_DDL_Cliente()
+    public static DataTable spCOMMESSE_SelectAll_DDL_CorpoOra()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spCOMMESSE_SelectAll_DDL_Cliente";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spCOMMESSE_SelectAll_DDL_CorpoOra";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spCOMMESSE_SelectAll_DDL_CorpoOra()
+    public static DataTable spCOMMESSE_SelectAll_DDL_Responsabile()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spCOMMESSE_SelectAll_DDL_CorpoOra";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spCOMMESSE_SelectAll_DDL_Responsabile";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spCOMMESSE_SelectAll_DDL_Responsabile()
+    public static DataTable spCOMMESSE_SelectByKey()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spCOMMESSE_SelectAll_DDL_Responsabile";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spCOMMESSE_SelectBykey";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spCOMMESSE_SelectByKey()
+    public static DataTable spACCESSI_SelectDate_Interval()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spCOMMESSE_SelectBykey";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spACCESSI_SelectDate_Interval";
+        DATABASE.cmd.Parameters.AddWithValue("DATAAPERTURA", DATAAPERTURA);
+        DATABASE.cmd.Parameters.AddWithValue("DATACHIUSURA", DATACHIUSURA);
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spACCESSI_SelectDate_Interval()
+    public static void spCOMMESSE_Update()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spACCESSI_SelectDate_Interval";
-        D.cmd.Parameters.AddWithValue("DATAAPERTURA", DATAAPERTURA);
-        D.cmd.Parameters.AddWithValue("DATACHIUSURA", DATACHIUSURA);
-        D.DT = D.EseguiSPRead();
-        return D.DT;
-    }
-
-    public void spCOMMESSE_Update()
-    {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spCOMMESSE_Update";
-        D.cmd.Parameters.AddWithValue("chiave", chiave);
-        D.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
-        D.cmd.Parameters.AddWithValue("chiaveRESPONSABILE", chiaveRESPONSABILE);
-        D.cmd.Parameters.AddWithValue("CORPOORA", CORPOORA);
-        D.cmd.Parameters.AddWithValue("DATAAPERTURA", DATAAPERTURA);
-        D.cmd.Parameters.AddWithValue("DATACHIUSURA", DATACHIUSURA);
-        D.cmd.Parameters.AddWithValue("DATACONSEGNA", DATACONSEGNA);
-        D.cmd.Parameters.AddWithValue("DESCRIZIONE", DESCRIZIONE);
-        D.cmd.Parameters.AddWithValue("IMPORTOCORPO", IMPORTOCORPO);
-        D.cmd.Parameters.AddWithValue("IMPORTOORARIO", IMPORTOORARIO);
-        D.cmd.Parameters.AddWithValue("ANTICIPO", ANTICIPO);
-        D.cmd.Parameters.AddWithValue("PERNOTTAMENTO", PERNOTTAMENTO);
-        D.cmd.Parameters.AddWithValue("PASTO", PASTO);
-        D.cmd.Parameters.AddWithValue("KM", KM);
-        D.cmd.Parameters.AddWithValue("PEDAGGI", PEDAGGI);
-        D.cmd.Parameters.AddWithValue("MEZZI", MEZZI);
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spCOMMESSE_Update";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
+        DATABASE.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
+        DATABASE.cmd.Parameters.AddWithValue("chiaveRESPONSABILE", chiaveRESPONSABILE);
+        DATABASE.cmd.Parameters.AddWithValue("CORPOORA", CORPOORA);
+        DATABASE.cmd.Parameters.AddWithValue("DATAAPERTURA", DATAAPERTURA);
+        DATABASE.cmd.Parameters.AddWithValue("DATACHIUSURA", DATACHIUSURA);
+        DATABASE.cmd.Parameters.AddWithValue("DATACONSEGNA", DATACONSEGNA);
+        DATABASE.cmd.Parameters.AddWithValue("DESCRIZIONE", DESCRIZIONE);
+        DATABASE.cmd.Parameters.AddWithValue("IMPORTOCORPO", IMPORTOCORPO);
+        DATABASE.cmd.Parameters.AddWithValue("IMPORTOORARIO", IMPORTOORARIO);
+        DATABASE.cmd.Parameters.AddWithValue("ANTICIPO", ANTICIPO);
+        DATABASE.cmd.Parameters.AddWithValue("PERNOTTAMENTO", PERNOTTAMENTO);
+        DATABASE.cmd.Parameters.AddWithValue("PASTO", PASTO);
+        DATABASE.cmd.Parameters.AddWithValue("KM", KM);
+        DATABASE.cmd.Parameters.AddWithValue("PEDAGGI", PEDAGGI);
+        DATABASE.cmd.Parameters.AddWithValue("MEZZI", MEZZI);
+        DATABASE.EseguiSPNonRead();
     }
 
 }

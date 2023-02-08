@@ -125,7 +125,7 @@
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-outline">
-                                        <asp:Button ID="btnClienti" class="btn btn-primary" runat="server" Text="Aggiungi Cliente" />
+                                        <asp:Button ID="btnClienti" class="btn btn-primary" runat="server" Text="Aggiungi Cliente" OnClick="btnClienti_Click" />
                                     </div>
                                 </div>
                             </div>

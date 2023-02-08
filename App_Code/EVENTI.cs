@@ -7,50 +7,41 @@ using System.Data.SqlClient;
 
 public class EVENTI
 {
-    public int chiave;
-    public int chiaveDIPENDENTE;
-    public string DATAORA;
-    public string EVENTO;
-    public string DATAINIZIO;
-    public string DATAFINE;
+    public static int chiave;
+    public static int chiaveDIPENDENTE;
+    public static string DATAORA;
+    public static string EVENTO;
+    public static string DATAINIZIO;
+    public static string DATAFINE;
 
-    public EVENTI()
+    public static void spEVENTI_DeleteAll()
     {
-
+        DATABASE.cmd.CommandText = "spEVENTI_DeleteAll";
+        DATABASE.EseguiSPNonRead();
     }
 
-    public void spEVENTI_DeleteAll()
+    public static void spEVENTI_Insert()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spEVENTI_DeleteAll";
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spEVENTI_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveDipendenti", chiaveDIPENDENTE);
+        DATABASE.cmd.Parameters.AddWithValue("DATAORA", DATAORA);
+        DATABASE.cmd.Parameters.AddWithValue("EVENTO", EVENTO);
+        DATABASE.EseguiSPNonRead();
     }
 
-    public void spEVENTI_Insert()
+    public static DataTable spEVENTI_SelectAll()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spEVENTI_Insert";
-        D.cmd.Parameters.AddWithValue("chiaveDipendenti", chiaveDIPENDENTE);
-        D.cmd.Parameters.AddWithValue("DATAORA", DATAORA);
-        D.cmd.Parameters.AddWithValue("EVENTO", EVENTO);
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spEVENTI_SelectAll";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spEVENTI_SelectAll()
+    public static DataTable spEVENTI_SelectDate_Interval()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spEVENTI_SelectAll";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
-    }
-
-    public DataTable spEVENTI_SelectDate_Interval()
-    {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spEVENTI_SelectDate_Interval";
-        D.cmd.Parameters.AddWithValue("DATAINIZIO", DATAINIZIO);
-        D.cmd.Parameters.AddWithValue("DATAFINE", DATAFINE);
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spEVENTI_SelectDate_Interval";
+        DATABASE.cmd.Parameters.AddWithValue("DATAINIZIO", DATAINIZIO);
+        DATABASE.cmd.Parameters.AddWithValue("DATAFINE", DATAFINE);
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 }

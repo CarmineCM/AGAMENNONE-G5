@@ -8,82 +8,70 @@ using System.Drawing;
 
 public class FATTURE
 {
-    public int chiave;
-    public int chiaveCOMMESSA;
-    public string NUMEROFATTURA;
-    public string DATAFATTURA;
-    public string IMPORTO;
-    public string ALIQUOTA;
-    public string DESCRIZIONE;
-    public string DATASALDO;
-    public string DATAINIZIO;
-    public string DATAFINE;
+    public static int chiave;
+    public static int chiaveCOMMESSA;
+    public static string NUMEROFATTURA;
+    public static string DATAFATTURA;
+    public static string IMPORTO;
+    public static string ALIQUOTA;
+    public static string DESCRIZIONE;
+    public static string DATASALDO;
+    public static string DATAINIZIO;
+    public static string DATAFINE;
 
-    public FATTURE()
+    public static void spFATTURE_Insert()
     {
- 
+        DATABASE.cmd.CommandText = "spFATTURE_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveCOMMESSA", chiaveCOMMESSA);
+        DATABASE.cmd.Parameters.AddWithValue("NUMEROFATTURA", NUMEROFATTURA);
+        DATABASE.cmd.Parameters.AddWithValue("DATAFATTURA", DATAFATTURA);
+        DATABASE.cmd.Parameters.AddWithValue("IMPORTO", IMPORTO);
+        DATABASE.cmd.Parameters.AddWithValue("ALIQUOTA", ALIQUOTA);
+        DATABASE.cmd.Parameters.AddWithValue("DESCRIZIONE", DESCRIZIONE);
+        DATABASE.cmd.Parameters.AddWithValue("DATASALDO", DATASALDO);
+        DATABASE.EseguiSPNonRead();
     }
 
-    public void spFATTURE_Insert()
+    public static void spFATTURE_SelectAll()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spFATTURE_Insert";
-        D.cmd.Parameters.AddWithValue("chiaveCOMMESSA", chiaveCOMMESSA);
-        D.cmd.Parameters.AddWithValue("NUMEROFATTURA", NUMEROFATTURA);
-        D.cmd.Parameters.AddWithValue("DATAFATTURA", DATAFATTURA);
-        D.cmd.Parameters.AddWithValue("IMPORTO", IMPORTO);
-        D.cmd.Parameters.AddWithValue("ALIQUOTA", ALIQUOTA);
-        D.cmd.Parameters.AddWithValue("DESCRIZIONE", DESCRIZIONE);
-        D.cmd.Parameters.AddWithValue("DATASALDO", DATASALDO);
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spFATTURE_SelectAll";
+        DATABASE.DT = DATABASE.EseguiSPRead();
     }
 
-    public void spFATTURE_SelectAll()
+    public static DataTable spFATTURE_ByDataSaldo()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spFATTURE_SelectAll";
-        D.DT = D.EseguiSPRead();
+        DATABASE.cmd.CommandText = "spFATTURE_ByDataSaldo";
+        DATABASE.cmd.Parameters.AddWithValue("DATASALDO", DATASALDO);
+        return DATABASE.DT;
     }
 
-    public DataTable spFATTURE_ByDataSaldo()
+    public static DataTable spFATTURE_SelectByKey()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spFATTURE_ByDataSaldo";
-        D.cmd.Parameters.AddWithValue("DATASALDO", DATASALDO);
-        return D.DT;
+        DATABASE.cmd.CommandText = "spFATTURE_SelectBykey";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spFATTURE_SelectByKey()
+    public static DataTable spFATTURE_ByMonth()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spFATTURE_SelectBykey";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spFATTURE_ByMonth";
+        DATABASE.cmd.Parameters.AddWithValue("DATAFATTURE", DATAFATTURA);
+        return DATABASE.DT;
     }
 
-    public DataTable spFATTURE_ByMonth()
+    public static DataTable spFATTURE_ByYear()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spFATTURE_ByMonth";
-        D.cmd.Parameters.AddWithValue("DATAFATTURE", DATAFATTURA);
-        return D.DT;
+        DATABASE.cmd.CommandText = "spFATTURE_ByMonth";
+        DATABASE.cmd.Parameters.AddWithValue("DATAFATTURE", DATAFATTURA);
+        return DATABASE.DT;
     }
 
-    public DataTable spFATTURE_ByYear()
+    public static DataTable spFATTURE_SelectDate_Interval()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spFATTURE_ByMonth";
-        D.cmd.Parameters.AddWithValue("DATAFATTURE", DATAFATTURA);
-        return D.DT;
-    }
-
-    public DataTable spFATTURE_SelectDate_Interval()
-    {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spFATTURE_SelectDate_Interval";
-        D.cmd.Parameters.AddWithValue("DATAINIZIO", DATAINIZIO);
-        D.cmd.Parameters.AddWithValue("DATAFINE", DATAFINE);
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spFATTURE_SelectDate_Interval";
+        DATABASE.cmd.Parameters.AddWithValue("DATAINIZIO", DATAINIZIO);
+        DATABASE.cmd.Parameters.AddWithValue("DATAFINE", DATAFINE);
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 }

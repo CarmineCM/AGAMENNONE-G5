@@ -7,53 +7,45 @@ using System.Data.SqlClient;
 
 public class ACCESSI
 {
-    public int chiave;
-    public int chiaveDIPENDENTE;
-    public string DATAORA;
-    public string EVENTO;
-    public string DATAINIZIO;
-    public string DATAFINE;
+    public static int chiave;
+    public static int chiaveDIPENDENTE;
+    public static string DATAORA;
+    public static string EVENTO;
+    public static string DATAINIZIO;
+    public static string DATAFINE;
 
-    public ACCESSI()
+
+    public static void spACCESSI_DeleteAll()
     {
-
-    }
-
-    public void spACCESSI_DeleteAll()
-    {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spACCESSI_DeleteAll";
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spACCESSI_DeleteAll";
+        DATABASE.EseguiSPNonRead();
     }
 
 
 
-    public void spACCESSI_Insert()
+    public static void spACCESSI_Insert()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spACCESSI_Insert";
-        D.cmd.Parameters.AddWithValue("chiaveDipendenti", chiaveDIPENDENTE);
-        D.cmd.Parameters.AddWithValue("DATAORA", DATAORA);
-        D.cmd.Parameters.AddWithValue("EVENTO", EVENTO);
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spACCESSI_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveDipendenti", chiaveDIPENDENTE);
+        DATABASE.cmd.Parameters.AddWithValue("DATAORA", DATAORA);
+        DATABASE.cmd.Parameters.AddWithValue("EVENTO", EVENTO);
+        DATABASE.EseguiSPNonRead();
     }
 
-    public DataTable spACCESSI_SelectAll()
+    public static DataTable spACCESSI_SelectAll()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spACCESSI_SelectAll";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spACCESSI_SelectAll";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
 
-    public DataTable spACCESSI_SelectDate_Interval()
+    public static DataTable spACCESSI_SelectDate_Interval()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spACCESSI_SelectDate_Interval";
-        D.cmd.Parameters.AddWithValue("DATAINIZIO", DATAINIZIO);
-        D.cmd.Parameters.AddWithValue("DATAFINE", DATAFINE);
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spACCESSI_SelectDate_Interval";
+        DATABASE.cmd.Parameters.AddWithValue("DATAINIZIO", DATAINIZIO);
+        DATABASE.cmd.Parameters.AddWithValue("DATAFINE", DATAFINE);
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 }

@@ -11,4 +11,10 @@ public partial class InsClienti: System.Web.UI.Page
     {
 
     }
+
+    protected void btnClienti_Click(object sender, EventArgs e)
+    {
+        CLIENTI.RAGIONESOCIALE = txtRS.Text.ToString();
+        CLIENTI.spCLIENTI_Insert();
+    }
 }

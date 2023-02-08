@@ -13,7 +13,26 @@
                         <div class="card-body">
                             <%--Data Table con i dati dei clienti--%>
                             <h5>Seleziona Cliente:</h5>
-                            <asp:GridView runat="server"></asp:GridView>
+                            <asp:GridView runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsListaClienti">
+                                <Columns>
+                                    <asp:BoundField DataField="chiave" HeaderText="chiave" InsertVisible="False" ReadOnly="True" SortExpression="chiave" />
+                                    <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE" />
+                                    <asp:BoundField DataField="INDIRIZZO" HeaderText="INDIRIZZO" SortExpression="INDIRIZZO" />
+                                    <asp:BoundField DataField="CITTA" HeaderText="CITTA" SortExpression="CITTA" />
+                                    <asp:BoundField DataField="CAP" HeaderText="CAP" SortExpression="CAP" />
+                                    <asp:BoundField DataField="PROVINCIA" HeaderText="PROVINCIA" SortExpression="PROVINCIA" />
+                                    <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL" />
+                                    <asp:BoundField DataField="TELEFONO" HeaderText="TELEFONO" SortExpression="TELEFONO" />
+                                    <asp:BoundField DataField="CODICEFISCALE" HeaderText="CODICEFISCALE" SortExpression="CODICEFISCALE" />
+                                    <asp:BoundField DataField="PIVA" HeaderText="PIVA" SortExpression="PIVA" />
+                                    <asp:BoundField DataField="PEC" HeaderText="PEC" SortExpression="PEC" />
+                                    <asp:BoundField DataField="CFE" HeaderText="CFE" SortExpression="CFE" />
+                                    <asp:BoundField DataField="TITOLARE" HeaderText="TITOLARE" SortExpression="TITOLARE" />
+                                    <asp:BoundField DataField="EMAILTITOLARE" HeaderText="EMAILTITOLARE" SortExpression="EMAILTITOLARE" />
+                                    <asp:BoundField DataField="TELTITOLARE" HeaderText="TELTITOLARE" SortExpression="TELTITOLARE" />
+                                </Columns>
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="sdsListaClienti" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spCLIENTI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                             <%--Data Table con i dati dei clienti--%>
                         </div>
                     </div>

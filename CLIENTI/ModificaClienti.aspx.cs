@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,7 +10,9 @@ public partial class ModificaClienti : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        
 
     }
+
 
 }

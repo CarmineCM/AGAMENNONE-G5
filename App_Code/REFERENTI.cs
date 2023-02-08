@@ -8,63 +8,53 @@ using System.Drawing;
 
 public class REFERENTI
 {
-    public int chiave;
-    public int chiaveCLIENTE;
-    public string COGNOME;
-    public string NOME;
-    public string EMAIL;
-    public string TELEFONO;
+    public static int chiave;
+    public static int chiaveCLIENTE;
+    public static string COGNOME;
+    public static string NOME;
+    public static string EMAIL;
+    public static string TELEFONO;
 
-    public REFERENTI()
+    public static void spREFERENTI_Insert()
     {
-    
+        DATABASE.cmd.CommandText = "spREFERENTI_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
+        DATABASE.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
+        DATABASE.cmd.Parameters.AddWithValue("NOME", NOME);
+        DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
+        DATABASE.cmd.Parameters.AddWithValue("TELEFONO", TELEFONO);
+        DATABASE.EseguiSPNonRead();
     }
 
-    public void spREFERENTI_Insert()
+    public static DataTable spREFERENTI_SelectAll()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spREFERENTI_Insert";
-        D.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
-        D.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
-        D.cmd.Parameters.AddWithValue("NOME", NOME);
-        D.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("TELEFONO", TELEFONO);
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spREFERENTI_SelectAll";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spREFERENTI_SelectAll()
+    public static DataTable spREFERENTI_SelectAll_DDL()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spREFERENTI_SelectAll";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spREFERENTI_SelectAll_DDL";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spREFERENTI_SelectAll_DDL()
+    public static DataTable spREFERENTI_SelectByKey()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spREFERENTI_SelectAll_DDL";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
+        DATABASE.cmd.CommandText = "spREFERENTI_SelectBykey";
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 
-    public DataTable spREFERENTI_SelectByKey()
+    public static void spREFERENTI_Update()
     {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spREFERENTI_SelectBykey";
-        D.DT = D.EseguiSPRead();
-        return D.DT;
-    }
-
-    public void spREFERENTI_Update()
-    {
-        DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spREFERENTI_Update";
-        D.cmd.Parameters.AddWithValue("chiave", chiave);
-        D.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
-        D.cmd.Parameters.AddWithValue("NOME", NOME);
-        D.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("TELEFONO", TELEFONO);
-        D.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "spREFERENTI_Update";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
+        DATABASE.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
+        DATABASE.cmd.Parameters.AddWithValue("NOME", NOME);
+        DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
+        DATABASE.cmd.Parameters.AddWithValue("TELEFONO", TELEFONO);
+        DATABASE.EseguiSPNonRead();
     }
 }
