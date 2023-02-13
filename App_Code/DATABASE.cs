@@ -28,7 +28,7 @@ public class DATABASE
     public static void EseguiSPNonRead()
     {
         cmd.CommandType = CommandType.StoredProcedure;
-        conn.Open();
+        if (conn.State == ConnectionState.Closed) conn.Open();
         cmd.ExecuteNonQuery();
         conn.Close();
     }

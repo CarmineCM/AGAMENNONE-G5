@@ -8,8 +8,8 @@ using System.Drawing;
 
 public class REFERENTI
 {
-    public static int chiave;
-    public static int chiaveCLIENTE;
+    public static string chiave;
+    public static string chiaveCLIENTE;
     public static string COGNOME;
     public static string NOME;
     public static string EMAIL;
@@ -42,7 +42,9 @@ public class REFERENTI
 
     public static DataTable spREFERENTI_SelectByKey()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spREFERENTI_SelectBykey";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.DT = DATABASE.EseguiSPRead();
         return DATABASE.DT;
     }

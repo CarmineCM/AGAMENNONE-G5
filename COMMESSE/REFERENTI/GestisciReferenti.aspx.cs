@@ -11,4 +11,14 @@ public partial class Default2 : System.Web.UI.Page
     {
 
     }
+
+    protected void grigliaReferenti_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (grigliaReferenti.SelectedValue == null)
+        {
+            return;
+        }
+        Session["Referenti"] = grigliaReferenti.SelectedValue.ToString();
+        // session Referenti per modfica referenti
+    }
 }

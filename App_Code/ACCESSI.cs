@@ -7,8 +7,8 @@ using System.Data.SqlClient;
 
 public class ACCESSI
 {
-    public static int chiave;
-    public static int chiaveDIPENDENTE;
+    public static string chiave;
+    public static string chiaveDIPENDENTE;
     public static string DATAORA;
     public static string EVENTO;
     public static string DATAINIZIO;
@@ -25,8 +25,9 @@ public class ACCESSI
 
     public static void spACCESSI_Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spACCESSI_Insert";
-        DATABASE.cmd.Parameters.AddWithValue("chiaveDipendenti", chiaveDIPENDENTE);
+        DATABASE.cmd.Parameters.AddWithValue("chiaveDIPENDENTE", chiaveDIPENDENTE);
         DATABASE.cmd.Parameters.AddWithValue("DATAORA", DATAORA);
         DATABASE.cmd.Parameters.AddWithValue("EVENTO", EVENTO);
         DATABASE.EseguiSPNonRead();

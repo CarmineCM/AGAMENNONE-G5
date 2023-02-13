@@ -9,6 +9,18 @@ public partial class gestioneAziende : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+     
+    }
 
+    protected void grigliaAzienda_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DATABASE.DT.Rows.Clear();
+
+        if (grigliaAzienda.SelectedValue == null)
+        {
+            return;
+        }
+        Session["Aziende"] = grigliaAzienda.SelectedValue;
+        // session Commesse per modfica Commesse
     }
 }

@@ -10,7 +10,7 @@ using System.Diagnostics;
 
 public class COMMESSE
 {
-    public static int chiave;
+    public static string chiave;
     public static int chiaveCLIENTE;
     public static int chiaveRESPONSABILE;
     public static string CORPOORA;

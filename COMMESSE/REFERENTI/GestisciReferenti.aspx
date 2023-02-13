@@ -11,8 +11,9 @@
                 <div class="row  d-flex justify-content-center align-items-center">
                     <div class="col-lg-8 col-xl-6">
                         <div>
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="chiave" DataSourceID="SDSTABELLA">
+                            <asp:GridView ID="grigliaReferenti" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="chiave" DataSourceID="SDSTABELLA" OnSelectedIndexChanged="grigliaReferenti_SelectedIndexChanged">
                                 <Columns>
+                                    <asp:CommandField ShowSelectButton="True" />
                                     <asp:BoundField DataField="chiave" HeaderText="chiave" InsertVisible="False" ReadOnly="True" SortExpression="chiave" />
                                     <asp:BoundField DataField="chiaveCLIENTE" HeaderText="chiaveCLIENTE" SortExpression="chiaveCLIENTE" />
                                     <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME" />
@@ -30,21 +31,19 @@
                                 <SortedDescendingCellStyle BackColor="#F1E5CE" />
                                 <SortedDescendingHeaderStyle BackColor="#93451F" />
                             </asp:GridView>
-                            <asp:SqlDataSource ID="SDSTABELLA" runat="server" ConnectionString="<%$ ConnectionStrings:AUTOSALONIConnectionString %>" SelectCommand="spREFERENTI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SDSTABELLA" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spREFERENTI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-lg-6">
-                    <asp:Button class="btn btn-secondary btn-lg" ID="btnIns" runat="server" Text="Inserisci" />
-                    <p style="margin-top: 5px;"></p>
-                    <asp:Button class="btn btn-secondary btn-lg" ID="btnMod" runat="server" Text="Modifica" />
+                <div class="card-footer text-muted">
+                    <asp:Button ID="btnIns" runat="server" Text="Inserisci" class="btn btn-primary" />
+                    <asp:Button ID="btnMod" runat="server" Text="Modifica" class="btn btn-primary" />
                 </div>
             </div>
         </div>
     </div>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-
 
     <%-- chiamata del popup --%>
     <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnIns"
@@ -61,14 +60,11 @@
         <%--ci pensa lo script manager a renderlo visibile--%>
 
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style="width: 400px; height: 400px;" id="irm1" src="InsReferente.aspx" runat="server"></iframe>
+        <iframe style="width: 700px; height: 700px;" id="irm1" src="InsReferente.aspx" runat="server"></iframe>
         <br />
         <asp:Button ID="Button3" runat="server" Text="Close" />
         <%--chiude il popup--%>
     </asp:Panel>
-
-
-
 
     <%-- chiamata del popup --%>
     <cc1:ModalPopupExtender ID="mp2" runat="server" PopupControlID="modifica" TargetControlID="btnMod"
@@ -85,7 +81,7 @@
         <%--ci pensa lo script manager a renderlo visibile--%>
 
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style="width: 400px; height: 400px;" id="Iframe1" src="ModificaReferente.aspx" runat="server"></iframe>
+        <iframe style="width: 700px; height: 700px;" id="Iframe1" src="ModificaReferente.aspx" runat="server"></iframe>
         <br />
         <asp:Button ID="Button4" runat="server" Text="Close" />
         <%--chiude il popup--%>

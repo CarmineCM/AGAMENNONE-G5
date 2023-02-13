@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 public class AZIENDE
 {
-    public static int chiave;
+    public static string chiave;
     public static string RAGIONESOCIALE;
     public static string INDIRIZZO;
     public static string CITTA;
@@ -26,7 +26,7 @@ public class AZIENDE
 
     public static void spAZIENDE_Insert()
     {
-        DATABASE.cmd.CommandText = "spACCESSI_Insert";
+        DATABASE.cmd.CommandText = "spAZIENDE_Insert";
         DATABASE.cmd.Parameters.AddWithValue("RAGIONESOCIALE", RAGIONESOCIALE);
         DATABASE.cmd.Parameters.AddWithValue("INDIRIZZO", INDIRIZZO);
         DATABASE.cmd.Parameters.AddWithValue("CITTA", CITTA);
@@ -61,12 +61,14 @@ public class AZIENDE
     public static DataTable spAZIENDE_SelectByKey()
     {
         DATABASE.cmd.CommandText = "spAZIENDE_SelectBykey";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.DT = DATABASE.EseguiSPRead();
         return DATABASE.DT;
     }
 
     public static void spAZIENDE_Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spAZIENDE_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.cmd.Parameters.AddWithValue("RAGIONESOCIALE", RAGIONESOCIALE);

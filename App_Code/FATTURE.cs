@@ -9,7 +9,7 @@ using System.Drawing;
 public class FATTURE
 {
     public static int chiave;
-    public static int chiaveCOMMESSA;
+    public static string chiaveCOMMESSA;
     public static string NUMEROFATTURA;
     public static string DATAFATTURA;
     public static string IMPORTO;
@@ -21,6 +21,7 @@ public class FATTURE
 
     public static void spFATTURE_Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spFATTURE_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveCOMMESSA", chiaveCOMMESSA);
         DATABASE.cmd.Parameters.AddWithValue("NUMEROFATTURA", NUMEROFATTURA);
