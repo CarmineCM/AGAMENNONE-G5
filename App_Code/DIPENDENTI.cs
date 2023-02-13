@@ -9,12 +9,12 @@ using System.Drawing;
 
 public class DIPENDENTI
 {
-    public static int chiave;
-    public static int chiaveAZIENDA;
+    public static string chiave;
+    public static string chiaveAZIENDA;
     public static string EMAIL;
     public static string PWD;
-    public static string ABILITATO;
-    public static string PRIMOACCESSO;
+    public static bool ABILITATO;
+    public static bool PRIMOACCESSO;
     public static string RUOLO;
     public static string COGNOME;
     public static string NOME;
@@ -34,9 +34,11 @@ public class DIPENDENTI
         DATABASE.EseguiSPNonRead();
     }
 
-    public static void spDIPENDENTI_CambiaPassword()
+    public static void spDIPENDENTI_CambioPassword()
     {
-        DATABASE.cmd.CommandText = "spDIPENDENTI_CambiaPassword";
+        DATABASE.cmd.Parameters.Clear();
+        DATABASE.cmd.CommandText = "spDIPENDENTI_CambioPassword";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.cmd.Parameters.AddWithValue("PWD", PWD);
         DATABASE.EseguiSPNonRead();
     }
@@ -50,11 +52,11 @@ public class DIPENDENTI
 
     public static void spDIPENDENTI_Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spDIPENDENTI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveAZIENDA", chiaveAZIENDA);
         DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
         DATABASE.cmd.Parameters.AddWithValue("PWD", PWD);
-        DATABASE.cmd.Parameters.AddWithValue("CAP", CAP);
         DATABASE.cmd.Parameters.AddWithValue("ABILITATO", ABILITATO);
         DATABASE.cmd.Parameters.AddWithValue("PRIMOACCESSO", PRIMOACCESSO);
         DATABASE.cmd.Parameters.AddWithValue("RUOLO", RUOLO);
@@ -73,6 +75,7 @@ public class DIPENDENTI
 
     public static DataTable spDIPENDENTI_Login()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spDIPENDENTI_Login";
         DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
         DATABASE.cmd.Parameters.AddWithValue("PWD", PWD);
@@ -82,8 +85,10 @@ public class DIPENDENTI
 
     public static void spDIPENDENTI_Registra()
     {
-        DATABASE.cmd.CommandText = "spDIPENENTI_Registra";
+        DATABASE.cmd.Parameters.Clear();
+        DATABASE.cmd.CommandText = "spDIPENDENTI_Registra";
         DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
+        DATABASE.cmd.Parameters.AddWithValue("PWD", PWD);
         DATABASE.EseguiSPNonRead();
     }
 
@@ -108,9 +113,9 @@ public class DIPENDENTI
         return DATABASE.DT;
     }
 
-    public static void spCLIENTI_Update()
+    public static void spDIPENDENTI_Update()
     {
-        DATABASE.cmd.CommandText = "spCLIENTI_Update";
+        DATABASE.cmd.CommandText = "spDIPENDENTI_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.cmd.Parameters.AddWithValue("chiaveAZIENDA", chiaveAZIENDA);
         DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
@@ -130,5 +135,26 @@ public class DIPENDENTI
         DATABASE.cmd.Parameters.AddWithValue("DATAINIZIORAPPORTO", DATAINIZIORAPPORTO);
         DATABASE.cmd.Parameters.AddWithValue("DATAFINERAPPORTO", DATAFINERAPPORTO);
         DATABASE.EseguiSPNonRead();
+    }
+
+    public static DataTable spDIPENDENTI_GetDipendentiByMail()
+    {
+        DATABASE.DT.Clear();
+        DATABASE.cmd.Parameters.Clear();
+        DATABASE.cmd.CommandText = "spDIPENDENTI_GetDipendentiByMail";
+        DATABASE.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
+    }
+
+    public static DataTable spDIPENDENTI_GetchiaveByEMailPWD()
+    {
+        DATABASE.DT.Clear();
+        DATABASE.cmd.Parameters.Clear();
+        DATABASE.cmd.CommandText = "spDIPENDENTI_GetchiaveByEMailPWD";
+        DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
+        DATABASE.cmd.Parameters.AddWithValue("PWD", PWD);
+        DATABASE.DT = DATABASE.EseguiSPRead();
+        return DATABASE.DT;
     }
 }

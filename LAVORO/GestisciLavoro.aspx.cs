@@ -11,4 +11,16 @@ public partial class GesioneLavoro : System.Web.UI.Page
     {
 
     }
+
+    protected void grigliaLavoro_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DATABASE.DT.Rows.Clear();
+        Session["Lavoro"] = "";
+        if (grigliaLavoro.SelectedValue == null)
+        {
+            return;
+        }
+        Session["Lavoro"] = grigliaLavoro.SelectedValue;
+        // session Lavoro per modfica lavoro
+    }
 }

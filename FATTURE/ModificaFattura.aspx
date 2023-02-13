@@ -6,85 +6,88 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Modifica Fattura</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 </head>
 <body>
     <form id="form1" runat="server">
 
+        <h2 class="text-center">MODIFICA FATTURE</h2>
 
-        <div class="container py-5 mt-5">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-lg-8 col-xl-6">
-
-                    <div class="card-header  text-center">
-                        <label>Scegli la Commessa</label>
-                        <asp:DropDownList ID="ddlCommesse" runat="server"></asp:DropDownList>
-                    </div>
-                    <div class="row">
-
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <label>Scegli la Commessa</label>
-                                    <asp:DropDownList ID="ddlFattureCommesse" runat="server"></asp:DropDownList>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <asp:Literal ID="ltlDataFattura" runat="server">Modifica la data della fattura</asp:Literal>
-                                    <asp:TextBox ID="txtDataFattura" runat="server"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <asp:Literal ID="ltlImporto" runat="server">Modifica l'importo della fattura</asp:Literal>
-                                    <asp:TextBox ID="txtImporto" runat="server"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <asp:Literal ID="ltlAliquota" runat="server">Modifica l'Aliquota</asp:Literal>
-                                    <asp:TextBox ID="txtRuolo" runat="server"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <asp:Literal ID="ltlDescrizione" runat="server">Modifica la descrizione</asp:Literal>
-                                    <asp:TextBox ID="txtDescrizione" runat="server"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <asp:Literal ID="ltlDataSaldo" runat="server">Modifica la data del saldo</asp:Literal>
-                                    <asp:TextBox ID="txtDataSaldo" runat="server"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-footer text-center">
-                            <asp:Button ID="btnModifica" runat="server" Text="Modifica fattura" />
-                        </div>
-
+        <!-- DROPDOWNLIST -->
+        <div class="container px-4">
+            <div class="row gx-5">
+                <div class="col">
+                    <div class="p-3">
+                        <asp:Label ID="lbScegliCommessa" runat="server" Text="SCEGLI COMMESSA" class="control-label col-sm-4"></asp:Label>
                     </div>
                 </div>
-
-                <div class="mt-3">
-                    <asp:GridView ID="gridFatture" runat="server"></asp:GridView>
+                <div class="col">
+                    <div class="p-3">
+                        <asp:DropDownList ID="ddlFattura" runat="server"></asp:DropDownList>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- COMPILAZIONE CAMPI -->
+        <div class="container" runat="server">
+            <div class="row g-2">
+                <!-- NUMERO FATTURA -->
+                <div class="col-6">
+                    <div class="p-3">
+                        <asp:Label ID="lbNumFattura" runat="server" Text="Numero Fattura"></asp:Label>
+                        <asp:TextBox ID="txtNumFattura" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+
+                <!-- DATA FATTURA -->
+                <div class="col-6">
+                    <div class="p-3">
+                        <asp:Label ID="lbDataFattura" runat="server" Text="Data Fattura"></asp:Label>
+                        <asp:TextBox ID="txtNome" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+
+                <!-- IMPORTO FATTURA -->
+                <div class="col-6">
+                    <div class="p-3">
+                        <asp:Label ID="lbImportoFattura" runat="server" Text="Importo Fattura"></asp:Label>
+                        <asp:TextBox ID="txtFattura" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+                <!-- ALIQUOTA -->
+                <div class="col-6">
+                    <div class="p-3">
+                        <asp:Label ID="lbAliquota" runat="server" Text="Aliquota"></asp:Label>
+                        <asp:TextBox ID="txtAliquota" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" runat="server">
+            <div class="row g-2">
+                <!-- DESCRIZIONE -->
+                <div class="col-6">
+                    <div class="p-3">
+                        <asp:Label ID="lbDescrizione" runat="server" Text="Descrizione"></asp:Label>
+                        <asp:TextBox ID="txtDescrizione" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+
+                <!-- DATA SALDO -->
+                <div class="col-6">
+                    <div class="p-3">
+                        <asp:Label ID="lbSaldo" runat="server" Text="Data Saldo"></asp:Label>
+                        <asp:TextBox ID="txtSaldo" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTONE MODIFICA -->
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <asp:Button ID="btnSalva" class="btn btn-primary" runat="server" Text="SALVA DATI" />
         </div>
 
     </form>

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 public class CLIENTI
 {
-    public static int chiave;
+    public static string chiave;
     public static string RAGIONESOCIALE;
     public static string INDIRIZZO;
     public static string CITTA;
@@ -26,6 +26,7 @@ public class CLIENTI
 
     public static void spCLIENTI_Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spCLIENTI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("RAGIONESOCIALE", RAGIONESOCIALE);
         DATABASE.cmd.Parameters.AddWithValue("INDIRIZZO", INDIRIZZO);
@@ -60,13 +61,16 @@ public class CLIENTI
 
     public static DataTable spCLIENTI_SelectByKey()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spCLIENTI_SelectBykey";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.DT = DATABASE.EseguiSPRead();
         return DATABASE.DT;
     }
 
     public static void spCLIENTI_Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spCLIENTI_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.cmd.Parameters.AddWithValue("RAGIONESOCIALE", RAGIONESOCIALE);

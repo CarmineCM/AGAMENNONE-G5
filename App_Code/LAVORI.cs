@@ -8,18 +8,18 @@ using System.Drawing;
 
 public class LAVORI
 {
-    public static int chiave;
-    public static int chiaveCOMMESSA;
-    public static int chiaveDIPENDENTE;
+    public static string chiave;
+    public static string chiaveCOMMESSA;
+    public static string chiaveDIPENDENTE;
     public static string DATAORA;
     public static string ORE;
     public static string DESCRIZIONE;
-    public static string PERNOTTAMENTO;
-    public static string PASTO;
+    public static double PERNOTTAMENTO;
+    public static double PASTO;
     public static string KM;
-    public static string PEDAGGI;
-    public static string MEZZI;
-    public static string SPESEEXTRA;
+    public static double PEDAGGI;
+    public static double MEZZI;
+    public static double SPESEEXTRA;
     public static string DESCRIZIONESPESEEXTRA;
     public static string ACCETTAZIONESPESE;
 
@@ -32,6 +32,7 @@ public class LAVORI
 
     public static void spLAVORI_Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spLAVORI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveCOMMESSA", chiaveCOMMESSA);
         DATABASE.cmd.Parameters.AddWithValue("chiaveDIPENDENTE", chiaveDIPENDENTE);
@@ -45,7 +46,7 @@ public class LAVORI
         DATABASE.cmd.Parameters.AddWithValue("MEZZI", MEZZI);
         DATABASE.cmd.Parameters.AddWithValue("SPESEEXTRA", SPESEEXTRA);
         DATABASE.cmd.Parameters.AddWithValue("DESCRIZIONESPESEEXTRA", DESCRIZIONESPESEEXTRA);
-        DATABASE.cmd.Parameters.AddWithValue("ACCETTAZIONESPESE", ACCETTAZIONESPESE);
+        //DATABASE.cmd.Parameters.AddWithValue("ACCETTAZIONESPESE", ACCETTAZIONESPESE);
         DATABASE.EseguiSPNonRead();
     }
 
@@ -82,13 +83,16 @@ public class LAVORI
 
     public static DataTable spLAVORI_SelectByKey()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spLAVORI_SelectBykey";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.DT = DATABASE.EseguiSPRead();
         return DATABASE.DT;
     }
 
     public static void spLAVORI_Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spLAVORI_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.cmd.Parameters.AddWithValue("chiaveCOMMESSA", chiaveCOMMESSA);
