@@ -11,8 +11,8 @@ using System.Diagnostics;
 public class COMMESSE
 {
     public static string chiave;
-    public static int chiaveCLIENTE;
-    public static int chiaveRESPONSABILE;
+    public static string chiaveCLIENTE;
+    public static string chiaveRESPONSABILE;
     public static string CORPOORA;
     public static string DATAAPERTURA;
     public static string DATACHIUSURA;

@@ -22,7 +22,7 @@ public partial class InsReferente : System.Web.UI.Page
         }
 
         // connessione al DB
-        REFERENTI.chiaveCLIENTE = ddlClienti.Text.Trim();
+        REFERENTI.chiaveCLIENTE = ddlClienti.SelectedValue;
         REFERENTI.COGNOME = txtCognome.Text.Trim();
         REFERENTI.NOME = txtNome.Text.Trim();
         REFERENTI.EMAIL = txtEmail.Text.Trim();

@@ -23,7 +23,8 @@
                 </div>
                 <div class="col">
                     <div class="p-3">
-                        <asp:DropDownList ID="ddlClienti" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlClienti" runat="server" DataSourceID="SDSCliente" DataTextField="RAGIONESOCIALE" DataValueField="chiave"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SDSCliente" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spCLIENTI_SelectAll_DDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                     </div>
                 </div>
             </div>

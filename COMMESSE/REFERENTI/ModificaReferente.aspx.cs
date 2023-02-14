@@ -23,11 +23,23 @@ public partial class COMMESSE_ModificaRefente : System.Web.UI.Page
         {
             REFERENTI.chiave = chiavegrigliaReferenti;
             REFERENTI.spREFERENTI_SelectByKey();
-            //ddlClienti.SelectedValue = DATABASE.DT.Rows[0]["chiaveCLIENTE"].ToString();
+            
+            
+            ddlClienti.SelectedValue = DATABASE.DT.Rows[0]["chiaveCLIENTE"].ToString();
             txtCognome.Text = DATABASE.DT.Rows[0]["COGNOME"].ToString();
             txtNome.Text = DATABASE.DT.Rows[0]["NOME"].ToString();
             txtEmail.Text = DATABASE.DT.Rows[0]["EMAIL"].ToString();
             txtTelefono.Text = DATABASE.DT.Rows[0]["TELEFONO"].ToString();
         }
+    }
+
+    protected void btnModifica_Click(object sender, EventArgs e)
+    {
+        REFERENTI.chiaveCLIENTE = ddlClienti.SelectedValue.ToString();
+        REFERENTI.COGNOME = txtCognome.Text.Trim();
+        REFERENTI.NOME = txtNome.Text.Trim();
+        REFERENTI.EMAIL = txtEmail.Text.Trim();
+        REFERENTI.TELEFONO = txtTelefono.Text.Trim();
+        REFERENTI.spREFERENTI_Update();
     }
 }

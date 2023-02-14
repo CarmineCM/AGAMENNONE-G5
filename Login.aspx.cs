@@ -28,6 +28,7 @@ public partial class Login : System.Web.UI.Page
             DIPENDENTI.EMAIL = txtEmail.Text.Trim();
             DIPENDENTI.PWD = CRYPTAZIONE.Crypta(txtPWD.Text.Trim());
             DataTable DT = new DataTable();
+            DT.Reset();
             DT = DIPENDENTI.spDIPENDENTI_Login();
             //se non esistono, return alla pagina login
             if (DT.Rows.Count == 0)
@@ -38,18 +39,13 @@ public partial class Login : System.Web.UI.Page
             else
             {
                 //se l'utente non ha ancora cambiato la password dopo la prima registrazione, redirect sulla pagina per cambiare la password.
-                if ((bool)DT.Rows[0]["PRIMOACCESSO"] == true)
+                if ((bool)DT.Rows[0]["PRIMOACCESSO"])
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Primo accesso rilevato. Cambiare la password tramite il pulsante Cambia Password in questa pagina prima di procedere.');", true);
                     return;
                 }
                 //se l'utente non è abilitato, return alla pagina login
-                if ((bool)DT.Rows[0]["ABILITATO"] == false)
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Utente non abilitato. Contattare l'amministratore.');", true);
-                    return;
-                }
-                else
+                if ((bool)DT.Rows[0]["ABILITATO"])
                 {
                     //avvio la session
                     Session["EMAIL"] = DATABASE.DT.Rows[0]["EMAIL"];
@@ -63,6 +59,11 @@ public partial class Login : System.Web.UI.Page
                     DATABASE.DT.Clear();
 
                     Response.Redirect("Default.aspx");
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Utente non abilitato. Contattare l'amministratore.');", true);
+                    return;
                 }
             }
         }

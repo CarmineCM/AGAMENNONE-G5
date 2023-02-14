@@ -36,7 +36,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <asp:Literal ID="ltlPwd" runat="server">Inserisci la password</asp:Literal>
-                                    <asp:TextBox ID="txtPwd" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtPwd" runat="server" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <asp:Literal ID="ltlCap" runat="server">Inserisci il CAP</asp:Literal>
-                                    <asp:TextBox ID="txtCap" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtCap" runat="server" max="99999"  MaxLength="5"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <asp:Literal ID="ltlPtovincia" runat="server">Inserisci la Provincia</asp:Literal>
-                                    <asp:TextBox ID="txtProvincia" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtProvincia" runat="server" MaxLength="2"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +146,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <asp:Literal ID="ltlCostoOrario" runat="server">Inserisci il Costo Orario</asp:Literal>
-                                    <asp:TextBox ID="txtCostoOrario" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtCostoOrario" runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
