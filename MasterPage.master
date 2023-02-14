@@ -50,30 +50,35 @@
                                     <a href="javascript:void(0)">COMMESSE</a>
                                     <ul class="sub-menu">
                                         <li><a href="../COMMESSE/GestisciCommesse.aspx">Gestisci Commesse</a></li>
-                                        <li><a href="../COMMESSE/REFERENTI/GestisciReferenti.aspx">Gestisci Referenti</a></li>
+                                        <li id="liReferenti" runat="server"><a href="../COMMESSE/REFERENTI/GestisciReferenti.aspx">Gestisci Referenti</a></li>
                                     </ul>
                                 </li>
 
-                                <li><a href="../CLIENTI/GestisciClienti.aspx">Gestisci Clienti</a></li>
+                                <li class="liClienti"><a href="../CLIENTI/GestisciClienti.aspx">Gestisci Clienti</a></li>
 
                                 <li><a href="../FATTURE/GestisciFatture.aspx">Gestisci Fatture</a></li>
 
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">DIPENDENTI</a>
                                     <ul class="sub-menu">
-                                        <li><a href="../DIPENDENTI/GestisciDipendenti.aspx">Gestisci Dipendenti</a></li>
-                                        <li><a href="../DIPENDENTI/AZIENDE/GestioneAziende.aspx">Gestisci Aziende</a></li>
+                                        <li id="liDipendenti" runat="server"><a href="../DIPENDENTI/GestisciDipendenti.aspx">Gestisci Dipendenti</a></li>
+                                        <li id="liAziende" runat="server"><a href="../DIPENDENTI/AZIENDE/GestioneAziende.aspx">Gestisci Aziende</a></li>
                                     </ul>
                                 </li>
 
-                                <li><a href="../REPORT/Report.aspx">Report</a></li>
+                                <li id="liReport" runat="server"><a href="../REPORT/Report.aspx">Report</a></li>
 
                                 <li class="has-sub">
                                     <a href="javascript:void(0)">LOG</a>
                                     <ul class="sub-menu">
-                                        <li><a href="../LOG/VisualizzaLog_A.aspx">Log Accessi</a></li>
-                                        <li><a href="../LOG/VisualizzaLog_E.aspx">Log Eventi</a></li>
+                                        <li id="liAccessi" runat="server"><a href="../LOG/VisualizzaLog_A.aspx">Log Accessi</a></li>
+                                        <li id="liEventi" runat="server"><a href="../LOG/VisualizzaLog_E.aspx">Log Eventi</a></li>
                                     </ul>
+                                </li>
+                                <li>
+                                    <asp:Label ID="lblUtente" runat="server"></asp:Label>
+                                    <br />
+                                    <asp:Button ID="btnLogout" class="btn btn-light btn-sm" runat="server" Text="Log Out" OnClick="btnLogout_Click" />
                                 </li>
                             </ul>
 

@@ -14,6 +14,8 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void grigliaReferenti_SelectedIndexChanged(object sender, EventArgs e)
     {
+        DATABASE.DT.Rows.Clear();
+        Session["Referenti"] = "";
         if (grigliaReferenti.SelectedValue == null)
         {
             return;

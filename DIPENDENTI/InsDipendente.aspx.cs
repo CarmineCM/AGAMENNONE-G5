@@ -26,9 +26,9 @@ public partial class InsDipendente : System.Web.UI.Page
 
         DIPENDENTI.chiaveAZIENDA = ddlAzienda.Text.Trim();
         DIPENDENTI.EMAIL = txtEMail.Text.Trim();
-        DIPENDENTI.PWD = txtPwd.Text.Trim();
-        DIPENDENTI.ABILITATO = ddlAbilita.SelectedValue;
-        DIPENDENTI.PRIMOACCESSO = ddlPrimoAccesso.SelectedValue;
+        DIPENDENTI.PWD = CRYPTAZIONE.Crypta(txtPwd.Text.Trim());
+        DIPENDENTI.ABILITATO = Convert.ToBoolean(ddlAbilita.SelectedValue);
+        DIPENDENTI.PRIMOACCESSO = Convert.ToBoolean(ddlPrimoAccesso.SelectedValue);
         DIPENDENTI.RUOLO = ddlRuolo.Text.Trim(); 
         DIPENDENTI.COGNOME = txtCognome.Text.Trim();    
         DIPENDENTI.NOME = txtNome.Text.Trim();

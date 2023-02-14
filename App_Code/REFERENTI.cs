@@ -51,8 +51,10 @@ public class REFERENTI
 
     public static void spREFERENTI_Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "spREFERENTI_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
+        DATABASE.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
         DATABASE.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
         DATABASE.cmd.Parameters.AddWithValue("NOME", NOME);
         DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
